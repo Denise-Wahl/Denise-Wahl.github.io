@@ -1240,7 +1240,9 @@ window._load_script = function(url, callback, isSubmit) {
     const e = document.getElementById("email-hero").value.trim();
     if (!v) { document.getElementById("vorname-hero").focus(); document.getElementById("vorname-hero").style.borderColor = "#f8b3b6"; return; }
     if (!e || !e.includes("@")) { document.getElementById("email-hero").focus(); document.getElementById("email-hero").style.borderColor = "#f8b3b6"; return; }
-    window.location.href = "dankesseite.html";
+    document.getElementById("firstname").value = v;
+document.getElementById("email").value = e;
+document.getElementById("_form_1_submit").click();
   }
 
   function showThankYou() {
