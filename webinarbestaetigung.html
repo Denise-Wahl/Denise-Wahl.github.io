@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Du bist dabei! – The Network Code · Webinar mit Denise Wahl</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink: #d4a84b;
+      --pink-dark: #a07828;
+      --pink-light: #f5d97a;
+      --pink-soft: #fdf5e4;
+      --teal: #0e1645;
+      --teal-dark: #080f32;
+      --teal-deep: #03061a;
+      --white: #ffffff;
+      --cream: #f4f5fb;
+      --cream-dark: #e8eaf5;
+      --text-dark: #03061a;
+      --text-mid: #2a3460;
+      --text-soft: #6a75a0;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .confirm-hero {
+      background: linear-gradient(160deg, var(--teal-deep) 0%, var(--teal) 70%, #151e55 100%);
+      padding: 80px 24px 110px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .confirm-hero::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212,168,75,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .check-circle {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      box-shadow: 0 4px 24px rgba(212,168,75,0.4);
+    }
+
+    .check-circle svg { width: 32px; height: 32px; }
+
+    .confirm-hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+      text-wrap: balance;
+      margin-bottom: 20px;
+    }
+
+    .confirm-hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin: 0 auto;
+      text-wrap: balance;
+    }
+
+    /* WEBINAR CARD */
+    .webinar-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 8px 40px rgba(3,6,26,0.15);
+      max-width: 560px;
+      margin: -52px auto 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .webinar-card-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 12px;
+    }
+
+    .webinar-card h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 24px;
+      line-height: 1.25;
+    }
+
+    .webinar-details {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .detail-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+    }
+
+    .detail-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--cream);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .detail-icon svg { width: 16px; height: 16px; stroke: var(--teal); }
+    .detail-row strong { color: var(--text-dark); font-weight: 600; }
+
+    .spam-note {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      background: var(--cream);
+      border-radius: 8px;
+      padding: 12px 16px;
+      line-height: 1.5;
+    }
+
+    /* CALENDAR */
+    .calendar-section {
+      padding: 64px 24px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.25;
+      text-wrap: balance;
+      margin-bottom: 10px;
+    }
+
+    .calendar-subtitle {
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+    }
+
+    .calendar-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cal-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.93rem;
+      font-weight: 500;
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: 1.5px solid var(--cream-dark);
+      background: var(--white);
+      color: var(--text-dark);
+    }
+
+    .cal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212,168,75,0.18);
+      border-color: var(--pink);
+    }
+
+    .cal-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .cal-google { background: #fff8ec; }
+    .cal-apple { background: #f2f3fa; }
+    .cal-outlook { background: #eef0fa; }
+
+    .cal-btn-text strong { display: block; font-size: 0.9rem; color: var(--text-dark); }
+    .cal-btn-text span { font-size: 0.78rem; color: var(--text-soft); font-weight: 400; }
+
+    /* WHAT TO EXPECT */
+    .expectation {
+      background: var(--teal-deep);
+      padding: 64px 24px;
+    }
+
+    .expectation-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .expectation .section-title { color: var(--white); }
+    .expectation .section-eyebrow { color: var(--pink); }
+
+    .expect-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .expect-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .expect-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--pink);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .expect-text strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .expect-text p {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+    }
+
+    /* PREP HOOK */
+    .prep {
+      padding: 64px 24px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .prep-card {
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      border-radius: 20px;
+      padding: 40px;
+      color: var(--white);
+      border: 1px solid rgba(212,168,75,0.2);
+    }
+
+    .prep-card .section-eyebrow { color: var(--pink); }
+
+    .prep-card h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .prep-card p {
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .prep-question {
+      background: rgba(212,168,75,0.12);
+      border-left: 3px solid var(--pink);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .prep-note {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* SHARE */
+    .share {
+      background: var(--cream-dark);
+      padding: 56px 24px;
+      text-align: center;
+    }
+
+    .share-inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .share-inner > p {
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+    }
+
+    .share-text {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px 24px;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      border: 1.5px solid var(--cream-dark);
+      text-align: left;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .btn-share {
+      display: inline-block;
+      background: transparent;
+      border: 1.5px solid var(--pink);
+      color: var(--pink-dark);
+      font-family: "Poppins", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-share:hover {
+      background: var(--pink);
+      color: var(--teal-deep);
+    }
+
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 24px 32px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a { color: var(--text-soft); text-decoration: none; }
+    footer a:hover { color: var(--text-mid); }
+    footer .footer-links { display: flex; gap: 20px; }
+
+    @media (max-width: 480px) {
+      .webinar-card { margin: -36px 16px 0; padding: 24px; }
+      .prep-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="confirm-hero">
+  <div class="check-circle">
+    <svg viewBox="0 0 32 32" fill="none" stroke="#03061a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6,16 13,23 26,10"/>
+    </svg>
+  </div>
+  <h1>Du bist dabei.<br>Das ist <span style="background:linear-gradient(105deg,#a07828 0%,#d4a84b 30%,#f5d97a 50%,#d4a84b 70%,#a07828 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite;">kein kleiner Schritt.</span></h1>
+  <p>Die meisten Frauen schieben solche Termine wochenlang vor sich her. Du nicht. Ich freue mich, dich am 18. August zu sehen.</p>
+</section>
+
+<!-- WEBINAR CARD -->
+<div style="padding:0 24px;">
+  <div class="webinar-card">
+    <p class="webinar-card-label">Dein Webinar</p>
+    <h2>The Network Code</h2>
+    <div class="webinar-details">
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <span><strong>Dienstag, 18. August 2026</strong></span>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <span><strong>20:00 Uhr</strong> · Dauer: 75 Minuten</span>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        </div>
+        <span><strong>Online via Zoom</strong> · Der Link kommt per E-Mail</span>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg>
+        </div>
+        <span>Wird <strong>aufgezeichnet</strong> · du bekommst den Link danach</span>
+      </div>
+    </div>
+    <p class="spam-note">Schau auch in deinen Spam-Ordner, falls du keine Bestätigungsmail siehst. Absender: hallo@denise-wahl.de</p>
+  </div>
+</div>
+
+<!-- CALENDAR -->
+<section class="calendar-section">
+  <p class="section-eyebrow">Jetzt direkt eintragen</p>
+  <h2 class="section-title">Damit du es nicht vergisst</h2>
+  <p class="calendar-subtitle">Trag dir den Termin direkt in deinen Kalender ein, am besten mit 15 Minuten Vorlauf, damit du in Ruhe ankommen kannst.</p>
+  <div class="calendar-buttons">
+    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Network+Code+%E2%80%93+Webinar+mit+Denise+Wahl&dates=20260818T180000Z/20260818T193000Z&details=Dein+kostenloses+Webinar+mit+Denise+Wahl.+Der+Zoom-Link+folgt+per+E-Mail.&location=Online+via+Zoom" target="_blank" class="cal-btn">
+      <div class="cal-icon cal-google">📅</div>
+      <div class="cal-btn-text">
+        <strong>Google Kalender</strong>
+        <span>Direkt in Google Calendar eintragen</span>
+      </div>
+    </a>
+    <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260818T180000Z%0ADTEND:20260818T193000Z%0ASUMMARY:The+Network+Code+–+Webinar+mit+Denise+Wahl%0ADESCRIPTION:Dein+kostenloses+Webinar+mit+Denise+Wahl.+Der+Zoom-Link+folgt+per+E-Mail.%0AEND:VEVENT%0AEND:VCALENDAR" download="the-network-code-webinar.ics" class="cal-btn">
+      <div class="cal-icon cal-apple">🍎</div>
+      <div class="cal-btn-text">
+        <strong>Apple Kalender / iCal</strong>
+        <span>Kalender-Datei herunterladen (.ics)</span>
+      </div>
+    </a>
+    <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260818T180000Z%0ADTEND:20260818T193000Z%0ASUMMARY:The+Network+Code+–+Webinar+mit+Denise+Wahl%0ADESCRIPTION:Dein+kostenloses+Webinar+mit+Denise+Wahl.+Der+Zoom-Link+folgt+per+E-Mail.%0AEND:VEVENT%0AEND:VCALENDAR" download="the-network-code-webinar.ics" class="cal-btn">
+      <div class="cal-icon cal-outlook">📊</div>
+      <div class="cal-btn-text">
+        <strong>Outlook</strong>
+        <span>Kalender-Datei herunterladen (.ics)</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expectation">
+  <div class="expectation-inner">
+    <p class="section-eyebrow">Was dich erwartet</p>
+    <h2 class="section-title">So läuft das Webinar ab</h2>
+    <div class="expect-list">
+      <div class="expect-item">
+        <div class="expect-dot"></div>
+        <div class="expect-text">
+          <strong>Der Zoom-Link kommt per E-Mail</strong>
+          <p>Du bekommst kurz vor dem Webinar eine separate E-Mail mit dem Zoom-Link direkt in dein Postfach. Bitte prüfe auch den Spam-Ordner.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-dot"></div>
+        <div class="expect-text">
+          <strong>75 Minuten, kein Smalltalk</strong>
+          <p>Wir steigen direkt ins Thema ein. Kein aufgeblähtes Intro, kein Aufwärmen. Die 75 Minuten gehören dir.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-dot"></div>
+        <div class="expect-text">
+          <strong>Am Ende gibt es ein Angebot, und das ist okay</strong>
+          <p>Ich zeige dir am Ende, wie wir tiefer zusammenarbeiten können. Du entscheidest, ob das für dich passt. Kein Druck.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-dot"></div>
+        <div class="expect-text">
+          <strong>Du bekommst die Aufzeichnung</strong>
+          <p>Falls du nicht live dabei sein kannst: Die Aufzeichnung bekommst du innerhalb von 48 Stunden nach dem Webinar per E-Mail.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREP HOOK -->
+<section class="prep">
+  <div class="prep-card">
+    <p class="section-eyebrow">Deine Vorbereitung</p>
+    <h3>Eine Frage, die dich begleiten soll</h3>
+    <p>Du musst gar nichts vorbereiten. Kein Material, keine Unterlagen. Aber wenn du möchtest, nimm diese eine Frage mit in die nächsten Tage und beobachte, was auftaucht:</p>
+    <div class="prep-question">
+      „In welchen Momenten halte ich mich zurück, und was erzähle ich mir in diesem Moment über mich selbst?"
+    </div>
+    <p class="prep-note">Du musst die Antwort nicht kennen. Es reicht, wenn du anfängst, hinzuschauen. Genau darum geht es am 18. August.</p>
+  </div>
+</section>
+
+<!-- SHARE -->
+<section class="share">
+  <div class="share-inner">
+    <p class="section-eyebrow" style="text-align:center;">Kennst du jemanden, der das braucht?</p>
+    <h2 class="section-title" style="text-align:center;">Teile das Webinar</h2>
+    <p>Wenn du gerade jemanden im Kopf hast, der genauso feststeckt wie du, schick ihr diesen Link. Sie wird dir danken.</p>
+    <div class="share-text">
+      „Hey, ich habe mich gerade für ein kostenloses Webinar angemeldet. Thema: Warum wir wissen, was wir tun müssten, und es trotzdem nicht tun. Im Network Marketing, aber eigentlich im Leben. Magst du mitkommen? denise-wahl.de/webinar-anmeldung"
+    </div>
+    <a href="https://wa.me/?text=Hey%2C+ich+habe+mich+gerade+f%C3%BCr+ein+kostenloses+Webinar+angemeldet+%E2%80%93+The+Network+Code+mit+Denise+Wahl.+Am+18.+August+um+20+Uhr.+Komm+doch+auch%3A+denise-wahl.de%2Fwebinar-anmeldung" target="_blank" class="btn-share">Via WhatsApp teilen</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Denise Wahl</span>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+</body>
+</html>
