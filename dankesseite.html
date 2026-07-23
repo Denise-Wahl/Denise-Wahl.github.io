@@ -5,28 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Danke! Dein Core Conflict Test ist unterwegs</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
 
   :root {
-    --pink: #f8b3b6;
-    --pink-dark: #e8959a;
-    --pink-soft: #fde8e9;
-    --teal: #62a1ac;
-    --teal-dark: #4a8a96;
-    --teal-deep: #2d6b76;
+    --pink: #d4a84b;
+    --pink-dark: #a07828;
+    --pink-light: #f0d080;
+    --pink-soft: #fdf5e4;
+    --teal: #0e1645;
+    --teal-dark: #080f32;
+    --teal-deep: #03061a;
     --white: #ffffff;
-    --cream: #fdf8f8;
-    --cream-dark: #f5eeee;
-    --text-dark: #1a2e32;
-    --text-mid: #4a6a70;
-    --text-soft: #8aabaf;
+    --cream: #f4f5fb;
+    --cream-dark: #e8eaf5;
+    --text-dark: #03061a;
+    --text-mid: #2a3460;
+    --text-soft: #6a75a0;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: var(--cream);
     color: var(--text-dark);
     line-height: 1.6;
@@ -38,7 +39,7 @@
 
   /* ─── HERO ─── */
   .hero {
-    background: linear-gradient(160deg, var(--teal-deep) 0%, var(--teal) 70%, #7bbcc6 100%);
+    background: linear-gradient(160deg, var(--teal-deep) 0%, var(--teal) 100%);
     padding: 56px 24px 72px;
     text-align: center;
     position: relative;
@@ -71,7 +72,7 @@
   }
 
   .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(2.2rem, 6vw, 3.5rem);
     font-weight: 600;
     color: var(--white);
@@ -172,11 +173,11 @@
     object-fit: cover;
     object-position: center top;
     border: 3px solid var(--pink);
-    box-shadow: 0 6px 24px rgba(98,161,172,0.2);
+    box-shadow: 0 6px 24px rgba(14,22,69,0.2);
   }
 
   .about-text h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--teal-deep);
@@ -213,7 +214,7 @@
   }
 
   .bullets-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 600;
     color: var(--teal-deep);
@@ -273,7 +274,7 @@
     background: var(--white);
     border-radius: 20px;
     padding: 40px 32px;
-    box-shadow: 0 8px 40px rgba(98,161,172,0.12);
+    box-shadow: 0 8px 40px rgba(14,22,69,0.12);
     position: relative;
     margin-bottom: 20px;
   }
@@ -289,7 +290,7 @@
   }
 
   .form-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.55rem;
     font-weight: 600;
     color: var(--teal-deep);
@@ -323,7 +324,7 @@
     border: 1.5px solid #d8edf0;
     border-radius: 10px;
     font-size: 1rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
     background: var(--cream);
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -333,7 +334,7 @@
 
   .form-group input:focus {
     border-color: var(--teal);
-    box-shadow: 0 0 0 3px rgba(98,161,172,0.15);
+    box-shadow: 0 0 0 3px rgba(14,22,69,0.15);
     background: var(--white);
   }
 
@@ -344,7 +345,7 @@
     color: var(--white);
     border: none;
     border-radius: 12px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
@@ -353,7 +354,7 @@
     transition: transform 0.15s, box-shadow 0.15s;
   }
 
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(98,161,172,0.4); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(14,22,69,0.4); }
   .btn-primary:active { transform: translateY(0); }
 
   .privacy-note {
@@ -384,7 +385,7 @@
   .proof-stars { color: var(--pink); font-size: 1rem; letter-spacing: 3px; margin-bottom: 16px; }
 
   .proof-quote {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(1.15rem, 3.5vw, 1.5rem);
     font-style: italic;
     color: rgba(255,255,255,0.92);
@@ -425,7 +426,7 @@
   }
 
   .ty-hero h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 5.5vw, 3rem);
     color: var(--white);
     font-weight: 600;
@@ -461,7 +462,7 @@
     object-fit: cover;
     object-position: center top;
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(98,161,172,0.2);
+    box-shadow: 0 8px 32px rgba(14,22,69,0.2);
     flex-shrink: 0;
   }
 
@@ -470,7 +471,7 @@
   }
 
   .ty-photo-text h4 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--teal-deep);
@@ -492,7 +493,7 @@
   }
 
   .ty-steps-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--teal-deep);
@@ -508,13 +509,13 @@
     display: flex;
     align-items: flex-start;
     gap: 18px;
-    box-shadow: 0 2px 16px rgba(98,161,172,0.08);
+    box-shadow: 0 2px 16px rgba(14,22,69,0.08);
     border-left: 3px solid var(--pink);
   }
 
   .step-num {
     flex-shrink: 0;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--pink-dark);
@@ -558,7 +559,7 @@
   .community-emoji { font-size: 2.2rem; margin-bottom: 14px; display: block; }
 
   .community-inner h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.75rem;
     color: var(--teal-deep);
     font-weight: 600;
@@ -580,7 +581,7 @@
     border: 2px solid var(--teal);
     border-radius: 100px;
     color: var(--teal-deep);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
@@ -606,7 +607,7 @@
   }
 
   .ty-bridge h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(1.6rem, 4vw, 2.1rem);
     font-weight: 600;
     color: var(--teal-deep);
@@ -630,7 +631,7 @@
     color: var(--text-dark);
     border: none;
     border-radius: 12px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
@@ -650,15 +651,19 @@
 
   footer {
     background: var(--teal-deep);
-    padding: 28px 24px;
-    text-align: center;
-    font-size: 0.74rem;
+    padding: 24px 32px;
+    font-size: 0.73rem;
     color: rgba(255,255,255,0.35);
-    line-height: 1.8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
   }
 
   footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
   footer a:hover { color: var(--pink); }
+  .footer-links { display: flex; gap: 20px; }
 
   @media (max-width: 480px) {
     .hero { padding: 48px 20px 60px; }
@@ -752,7 +757,11 @@
 
 
 <footer>
-  <p>© 2025 · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="#">Abmelden</a></p>
+  <span>© 2026 Denise Wahl</span>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
 </footer>
 </body>
 </html>
