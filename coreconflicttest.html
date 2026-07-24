@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>The Core Conflict Test | Denise Wahl</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --pink: #d4a84b;
+    --teal: #0e1645;
+    --teal-deep: #03061a;
+    --white: #ffffff;
+    --cream: #f4f5fb;
+    --text-dark: #03061a;
+    --text-mid: #2a3460;
+    --text-soft: #6a75a0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: var(--white);
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 24px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* ===== COVER PAGE ===== */
+  .cover {
+    display: flex;
+    flex-direction: column;
+  }
+  .cover-frame {
+    margin: 28px;
+    border: 1px solid rgba(14,22,69,0.35);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-photo-wrap {
+    height: 33%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .cover-photo {
+    max-width: 60%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .cover-color-block {
+    flex: 1;
+    background: #0e1645;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+  .cover-color-block h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    z-index: 1;
+    margin-bottom: 6px;
+  }
+  .cover-color-block h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 2.6rem;
+    color: var(--white);
+    margin-top: 0;
+    line-height: 1.15;
+    z-index: 1;
+  }
+  .cover-gold {
+    background: linear-gradient(105deg, #a07828 0%, #d4a84b 30%, #f5d97a 50%, #d4a84b 70%, #a07828 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+    font-weight: 700;
+  }
+  .cover-brand-bar {
+    background: var(--teal-deep);
+    padding: 22px;
+    text-align: center;
+  }
+  .cover-brand-bar span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pink);
+  }
+
+  /* ===== CONTENT PAGES ===== */
+  .content-page {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-banner {
+    height: 70px;
+    background: linear-gradient(120deg, var(--teal-deep) 0%, var(--teal) 55%, var(--teal-deep) 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-banner::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    top: -40%;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 65%);
+  }
+  .header-banner span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white);
+    z-index: 1;
+  }
+
+  .content-body {
+    flex: 1;
+    padding: 48px 56px;
+  }
+
+  .content-body h3.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--teal-deep);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--pink);
+    display: inline-block;
+  }
+
+  .steps {
+    list-style: none;
+    counter-reset: step;
+    margin-bottom: 32px;
+  }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 14px;
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .steps li strong { color: var(--text-dark); }
+
+  .note-box {
+    background: var(--cream);
+    border-left: 3px solid var(--pink);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    margin-bottom: 8px;
+  }
+
+  .prompt-box {
+    background: var(--cream);
+    border: 1px solid rgba(14,22,69,0.2);
+    border-radius: 14px;
+    padding: 28px 32px;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    line-height: 1.75;
+    white-space: pre-wrap;
+  }
+  .prompt-label {
+    display: inline-block;
+    background: var(--teal-deep);
+    color: var(--white);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+
+  .questions {
+    margin-top: 10px;
+  }
+  .question-card {
+    background: var(--white);
+    border: 1px solid rgba(14,22,69,0.2);
+    border-left: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+  }
+  .question-card .q-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--pink);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .question-card p {
+    font-size: 0.93rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+  .answer-line {
+    border-bottom: 1px dashed var(--text-soft);
+    height: 22px;
+    margin-top: 10px;
+  }
+
+  .footer-banner {
+    height: 26px;
+    background: var(--teal-deep);
+    position: relative;
+  }
+  .footer-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--pink), var(--cream), var(--teal));
+  }
+
+  @media print {
+    body { background: var(--white); }
+    .page { margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== COVER PAGE ===================== -->
+<div class="page cover">
+  <div class="cover-frame">
+        <div class="cover-photo-wrap"><img class="cover-photo" src="https://denise-wahl.github.io/denise-kleid.jpg" alt="Denise Wahl"></div>
+    <div class="cover-color-block">
+      <h1>Workbook</h1>
+      <h2>The <span class="cover-gold">Core Conflict</span></h2>
+    </div>
+  </div>
+  <div class="cover-brand-bar">
+    <span>Denise Wahl</span>
+  </div>
+</div>
+
+<!-- ===================== CONTENT PAGE 1 ===================== -->
+<div class="page content-page">
+  <div class="header-banner" style="display: flex; justify-content: center; align-items: center; width: 100%;"><span style="text-align: center;">Denise Wahl · The Core Conflict Test</span></div>
+  <div class="content-body">
+
+    <h3 class="section-title">🎯 The Core Conflict Test</h3>
+    <p style="font-size:1.05rem; color: var(--text-mid); margin-bottom: 28px; line-height: 1.7;">
+      Finde heraus, was dich wirklich davon abhält, dein Network Marketing selbstbewusst zu zeigen.
+    </p>
+
+    <h3 class="section-title" style="font-size:1.2rem;">So funktioniert es</h3>
+    <ul class="steps">
+      <li>Kopiere den Prompt auf der nächsten Seite komplett.</li>
+      <li>Füge ihn in ChatGPT oder Claude ein.</li>
+      <li>Die KI stellt dir alle Fragen einzeln — beantworte sie so ehrlich wie möglich, schriftlich oder per Sprachnachricht.</li>
+      <li>Am Ende bekommst du deine persönliche Auswertung.</li>
+    </ul>
+
+    <div class="note-box">
+      🎙 Nimm dir 10–15 Minuten Zeit, am besten in Ruhe. Antworte so ehrlich wie möglich — es lohnt sich.
+    </div>
+
+  </div>
+  <div class="footer-banner"></div>
+</div>
+
+<!-- ===================== CONTENT PAGE 2 ===================== -->
+<div class="page content-page">
+  <div class="header-banner" style="display: flex; justify-content: center; align-items: center; width: 100%;"><span style="text-align: center;">Denise Wahl · The Core Conflict Test</span></div>
+  <div class="content-body">
+
+    <h3 class="section-title">Prompt</h3>
+    <div class="prompt-box">
+<span class="prompt-label">Zum Kopieren</span>
+
+Du bist ein einfühlsamer, psychologisch versierter Coach für Frauen, die nebenberuflich im Network Marketing gestartet sind und sich nicht trauen, sichtbar zu werden.
+
+Deine Aufgabe: Führe mich durch den Core Conflict Test. Stelle mir die folgenden 10 Fragen einzeln und nacheinander — immer nur eine Frage auf einmal. Warte auf meine Antwort. Stelle keine Zwischenfragen, gib kein Kommentar und keine Bewertung zwischen den Fragen.
+
+Formuliere jede Frage warm, einladend und ohne Druck — so als würdest du mit einer Freundin sprechen.
+
+Hier sind die 10 Fragen:
+
+1. Du willst einen Post über dein Network-Business schreiben. Was passiert in dir — welcher Gedanke oder welches Gefühl kommt als erstes?
+
+2. Eine Bekannte fragt dich, was du beruflich machst. Du erwähnst dein Network-Business. Was fühlst du in diesem Moment?
+
+3. Was hält dich heute konkret davon ab, einen Post über dein Angebot zu veröffentlichen — wenn du wirklich ehrlich bist?
+
+4. Du stehst neben einer Freundin, Nachbarin oder Kollegin. Du weißt: Dein Produkt könnte ihr wirklich helfen. Was passiert in dir — und was tust du?
+
+5. Wie reagierst du innerlich, wenn jemand aus deinem Umfeld dein Business kritisiert oder skeptisch darauf reagiert?
+
+6. Was wäre der schlimmste Satz, den jemand über dich sagen könnte, wenn du sichtbarer wirst? Und warum trifft dich genau dieser Satz?
+
+7. Wo nimmst du im Alltag Rücksicht auf andere — und was kostet dich das in Bezug auf dein Business?
+
+8. Stell dir vor, du bist wirklich sichtbar — du postest regelmäßig, sprichst Menschen an, gehst raus. Was genau fühlt sich daran am beängstigendsten an?
+
+9. Was bräuchtest du, um morgen selbstbewusst und ohne schlechtes Gewissen über dein Business zu sprechen?
+
+10. Welche Wahrheit über dich oder dein Business sprichst du noch nicht laut aus — weil sie dich zwingen würde, endlich zu handeln?
+
+Nachdem ich alle 10 Fragen beantwortet habe, gibst du mir meine persönliche Auswertung. Sie enthält:
+
+1. Meinen Core Conflict Typ — mit einem prägnanten Namen und einem Leitsatz, der mich sofort wiedererkennen lässt.
+2. Was dieser Konflikt über meine innere Dynamik aussagt — ehrlich, tiefgehend, ohne Beschönigung, aber wertschätzend.
+3. Meinen Blindspot — den einen Punkt, den ich selbst noch nicht klar sehe und der mich am meisten zurückhält.
+4. Den Preis, den ich aktuell dafür zahle — konkret und ehrlich.
+5. Meinen nächsten mutigen Schritt — klein, sofort umsetzbar, ohne großen Plan.
+6. Einen persönlichen Hinweis am Ende — in diesem Ton:
+Ein kurzer, ehrlicher Satz, der mir zeigt: Dieser Konflikt macht mich nicht schwach, sondern menschlich — und ich bin damit nicht allein.
+
+Formuliere die gesamte Auswertung warm, direkt und ohne Coaching-Floskeln. Radikal ehrlich, aber nie hart. Starte jetzt mit Frage 1.
+    </div>
+
+    <div class="note-box" style="margin-top: 24px;">
+      Wenn du spürst, dass du mit diesem Konflikt nicht alleine weiterkommen willst: Im kostenlosen Erstgespräch schauen wir gemeinsam auf deinen Core Conflict, finden heraus, was dich konkret zurückhält, und du gehst mit einem klaren, machbaren nächsten Schritt für dein Business raus. Buch dir dein Gespräch hier: <strong><a href="https://calendly.com/hallo-denise-wahl/30min" style="color: inherit; text-decoration: underline;">calendly.com/hallo-denise-wahl/30min</a></strong>
+    </div>
+
+  </div>
+  <div class="footer-banner"></div>
+</div>
+
+</body>
+</html>
