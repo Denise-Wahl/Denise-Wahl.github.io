@@ -44,14 +44,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* HERO */
     .hero {
-      background: linear-gradient(160deg, var(--teal-deep) 0%, var(--teal) 70%, #151e55 100%);
-      padding: 72px 24px 80px;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+      background: var(--teal-deep);
+      overflow: hidden;
     }
 
     .hero-inner {
-      max-width: 680px;
-      margin: 0 auto;
+      padding: 72px 48px 72px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .hero-photo-col {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-photo-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-inner {
+        padding: 48px 24px 40px;
+        text-align: center;
+        align-items: center;
+      }
+      .hero-photo-col {
+        height: 320px;
+        order: -1;
+      }
     }
 
     .badge {
@@ -131,7 +165,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .btn-primary {
-      display: inline-block;
+      display: block;
+      width: 100%;
       background: linear-gradient(105deg, #a07828 0%, #d4a84b 25%, #f5d97a 50%, #d4a84b 75%, #a07828 100%);
       background-size: 200% auto;
       animation: shimmer 3s linear infinite;
@@ -139,9 +174,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-family: "Poppins", sans-serif;
       font-size: 1rem;
       font-weight: 700;
-      padding: 18px 40px;
+      padding: 20px 40px;
       border-radius: 50px;
       text-decoration: none;
+      text-align: center;
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 24px rgba(212,168,75,0.5), 0 0 0 1px rgba(245,217,122,0.3);
     }
@@ -781,24 +817,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- SITE HEADER -->
-<header style="text-align:center;padding:18px 24px 14px;background:var(--dark);border-bottom:1px solid rgba(255,255,255,0.06);">
-  <p style="font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:600;color:#fff;margin:0 0 2px;">Denise Wahl</p>
-  <p style="font-family:'Poppins',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#d4a84b;margin:0;">Dein Network. Auf deine Art.</p>
-</header>
+<!-- ANNOUNCEMENT BAR -->
+<div style="background:linear-gradient(105deg,#a07828 0%,#d4a84b 25%,#f5d97a 50%,#d4a84b 75%,#a07828 100%);background-size:200% auto;animation:shimmer 4s linear infinite;color:#1a1000;text-align:center;padding:11px 24px;font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">
+  KOSTENLOSES LIVE-WEBINAR &nbsp;·&nbsp; DIENSTAG, 27.10.2026 &nbsp;·&nbsp; 18:00 UHR
+</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="badge">Kostenloses Live-Webinar · Dienstag, 27.10.2026 · 18:00 Uhr</div>
+    <div class="badge">Für Networkerinnen, die in keine Schublade passen</div>
     <p class="hero-eyebrow">Dein Network. Auf deine Art.</p>
     <h1>The <span style="background:linear-gradient(105deg,#a07828 0%,#d4a84b 30%,#f5d97a 50%,#d4a84b 70%,#a07828 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite;">NETWORK</span> Code</h1>
     <p class="hero-sub">
-      Für Frauen im Network Marketing, die weder Lust auf Namensliste und 20 Nachrichten am Tag haben noch darauf, Produktbilder zu posten und zu hoffen, dass irgendwer fragt. Sondern die ihr Business auf ihre eigene, natürliche Art aufbauen wollen — und dabei endlich <strong style="color:var(--pink);font-weight:700;">frei</strong> sein möchten.
+      Für Frauen im Network Marketing, die weder Lust auf Namensliste und 20 Nachrichten am Tag haben noch darauf, Produktbilder zu posten und zu hoffen, dass irgendwer fragt. Sondern die ihr Business auf ihre eigene, natürliche Art aufbauen wollen und dabei endlich <strong style="color:var(--pink);font-weight:700;">frei</strong> sein möchten.
     </p>
-    <button onclick="openPopup()" class="btn-primary" style="border:none;cursor:pointer;margin-bottom:8px;">Ja, ich bin dabei →</button>
-    <p class="hero-note">100 % kostenlos</p>
-    <div class="hero-meta" style="margin-top:32px;margin-bottom:0;">
+    <button onclick="openPopup()" class="btn-primary" style="border:none;cursor:pointer;margin-bottom:12px;">JA, ICH BIN DABEI</button>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <span style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.08);padding:6px 14px;border-radius:100px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg>
+        Live &amp; Online
+      </span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.08);padding:6px 14px;border-radius:100px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        100 % kostenlos
+      </span>
+    </div>
+    <div class="hero-meta" style="margin-top:28px;margin-bottom:0;justify-content:flex-start;">
       <div class="hero-meta-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
         Dienstag, 27.10.2026
@@ -807,11 +851,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         18:00 Uhr · 75 Minuten
       </div>
-      <div class="hero-meta-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg>
-        Wird aufgezeichnet
-      </div>
     </div>
+  </div>
+  <div class="hero-photo-col">
+    <img src="freiheit-familie.jpg" alt="Denise Wahl">
   </div>
 </section>
 
