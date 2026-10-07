@@ -44,47 +44,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* HERO */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
       min-height: 88vh;
       background: var(--teal-deep);
       overflow: hidden;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-inner {
-      padding: 72px 48px 72px 40px;
+      padding: 72px 48px 72px 48px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: left;
-    }
-
-    .hero-photo-col {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-photo-col img {
+      text-align: center;
+      align-items: center;
+      max-width: 760px;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
     }
 
     @media (max-width: 768px) {
       .hero {
-        grid-template-columns: 1fr;
         min-height: auto;
       }
       .hero-inner {
         padding: 48px 24px 40px;
-        text-align: center;
-        align-items: center;
-      }
-      .hero-photo-col {
-        height: 320px;
-        order: -1;
       }
     }
 
@@ -855,9 +839,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         18:00 Uhr · 75 Minuten
       </div>
     </div>
-  </div>
-  <div class="hero-photo-col">
-    <img src="Wanderbild.jpg" alt="Denise Wahl">
   </div>
 </section>
 
