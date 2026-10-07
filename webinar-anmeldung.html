@@ -68,8 +68,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         min-height: auto;
       }
       .hero-inner {
-        padding: 48px 24px 40px;
+        padding: 32px 20px 28px;
       }
+      .badge { margin-bottom: 16px; }
+      .hero h1 { margin-bottom: 14px; }
+      .hero-sub { margin-bottom: 24px; font-size: 0.95rem; }
+      .hero-meta { margin-bottom: 24px; }
     }
 
     .badge {
@@ -180,9 +184,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       z-index: 999;
       animation: pulse 2s ease-in-out infinite;
       display: none;
+      pointer-events: none;
     }
 
-    .sticky-cta.visible { display: block; }
+    .sticky-cta.visible { display: block; pointer-events: auto; }
+
+    body { padding-bottom: 80px; }
+
+    @media (max-width: 768px) {
+      .sticky-cta { bottom: 16px; }
+    }
 
     .hero-note {
       margin-top: 16px;
@@ -816,7 +827,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-eyebrow">Dein Network. Auf deine Art.</p>
     <h1>The <span style="background:linear-gradient(105deg,#a07828 0%,#d4a84b 30%,#f5d97a 50%,#d4a84b 70%,#a07828 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite;">NETWORK</span> Code</h1>
     <p class="hero-sub">
-      Für Networkerinnen in der Gesundheitsbranche, die weder Lust auf Namenslisten noch 20 Nachrichten am Tag an Wildfremde zu schicken, wild Produktbilder posten und zu hoffen, dass sich darauf jemand meldet, sondern die ihr Business auf ihre eigene, natürliche Art machen wollen, endlich <strong style="color:var(--pink);font-weight:700;">Kundinnen und Partnerinnen gewinnen</strong> und sich so ein erfolgreiches Network Business aufbauen.
+      Für Networkerinnen in der Gesundheitsbranche, die keine Lust mehr auf Namenslisten, Kaltakquise und wildes Produktposting haben – sondern <strong style="color:var(--pink);font-weight:700;">Kundinnen und Partnerinnen</strong> auf ihre eigene, natürliche Art gewinnen wollen.
     </p>
     <button onclick="openPopup()" class="btn-primary" style="border:none;cursor:pointer;margin-bottom:12px;">JA, ICH BIN DABEI</button>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
@@ -922,7 +933,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="whom-list">
       <div class="whom-item">
         <div class="whom-check"><svg viewBox="0 0 12 12" fill="none" stroke="#1a2e32" stroke-width="2.5"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>
-        <span>Du im Angestelltenjob gut funktionierst, aber innerlich weißt: Das kann nicht alles sein.</span>
+        <span>Du in deinem Angestelltenjob funktionierst, aber längst weißt, dass du dir mit deinem Network mehr Freiheit aufbauen willst.</span>
       </div>
       <div class="whom-item">
         <div class="whom-check"><svg viewBox="0 0 12 12" fill="none" stroke="#1a2e32" stroke-width="2.5"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>
@@ -1033,7 +1044,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p class="faq-answer-inner">75 Minuten, vollgepackt mit echten Inhalten. Kein Aufwärmen, kein Strecken, wir gehen direkt in die Tiefe.</p>
+        <p class="faq-answer-inner">75 Minuten mit konkreten Inhalten. Kein langes Vorgeplänkel – wir gehen direkt rein.</p>
       </div>
     </div>
 
