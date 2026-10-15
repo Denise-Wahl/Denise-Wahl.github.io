@@ -133,8 +133,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         min-height: auto;
       }
       .hero-photo-col {
-        min-height: 280px;
+        min-height: auto;
+        display: flex;
+        justify-content: center;
+        padding: 24px 0 0;
       }
+      .hero-photo-col img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+      }
+      .hero-photo-col::before { display: none; }
       .hero-inner {
         padding: 48px 24px 56px;
         align-items: center;
@@ -902,12 +913,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner">
     <div class="gift-badge">
-      Super, du hast dir die Analyse gesichert und ich habe noch ein Geschenk für dich!
+      Ja! Du hast den ersten Schritt gemacht. Und ich habe noch etwas für dich.
     </div>
     <p class="hero-eyebrow">Dein Network. Auf deine Art.</p>
     <h1>The <span style="background:linear-gradient(105deg,#a07828 0%,#d4a84b 30%,#f5d97a 50%,#d4a84b 70%,#a07828 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite;">NETWORK</span> Code</h1>
     <p class="hero-sub">
-      Für Frauen, die endlich <strong style="color:var(--pink);font-weight:700;">sicher</strong> und <strong style="color:var(--pink);font-weight:700;">selbstbewusst</strong> über ihre Produkte und Karrierechancen sprechen wollen, um sich ein Business aufzubauen, das sie raus aus dem Job und rein in echte <strong style="color:var(--pink);font-weight:700;">Freiheit</strong> und <strong style="color:var(--pink);font-weight:700;">Unabhängigkeit</strong> bringt.
+      Du weißt jetzt, was dich bremst. Im Webinar zeige ich dir, wie du das änderst. Wie du ganz natürlich über dein Business sprichst — im Alltag, online, ohne Druck. Damit aus dem Wissen endlich Bewegung wird.
     </p>
     <a href="webinar-anmeldung.html" class="btn-primary" style="margin-bottom:8px;padding:13px 28px;font-size:0.9rem;width:fit-content;display:inline-block;">Yes, ich bin dabei</a>
     <p class="hero-note">100 % kostenlos · Dienstag, 27.10.2026 · 18:00 Uhr</p>
