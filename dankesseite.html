@@ -14,8 +14,8 @@
 
 /* Freebie-Bestätigung oben */
 .freebie-notice{background:var(--light);border-bottom:1px solid #e4e7ef;padding:11px 0}
-.notice-inner{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
-.notice-inner p{margin:0;font-size:.82rem;line-height:1.65}.notice-check{display:grid;place-items:center;width:25px;height:25px;flex:0 0 25px;background:#e5c66b;color:var(--navy);font-weight:700;border-radius:50%}
+.notice-inner{display:flex;gap:12px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
+.notice-inner p{margin:0;font-size:.82rem;line-height:1.65;text-align:center}.notice-check{display:grid;place-items:center;width:25px;height:25px;flex:0 0 25px;background:#e5c66b;color:var(--navy);font-weight:700;border-radius:50%;margin-top:3px}
 .notice-inner a{font-size:.77rem;font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
 
 /* Webinar-Hero */
@@ -61,7 +61,7 @@
 <section aria-label="Deine Freebie-Anmeldung" class="freebie-notice">
   <div class="container notice-inner">
     <span aria-hidden="true" class="notice-check">✓</span>
-    <p><strong>Geschafft, deine Anmeldung zu The Core Conflict ist eingegangen!</strong> Schau gleich in dein E-Mail-Postfach und bestätige gegebenenfalls noch deine E-Mail-Adresse.</p>
+    <p><strong>Geschafft, deine Anmeldung zu The Core Conflict ist eingegangen!</strong><br>Schau gleich in dein E-Mail-Postfach und bestätige gegebenenfalls noch deine E-Mail-Adresse.</p>
     <a href="#freebie-hinweis">So erhältst du deine Analyse</a>
   </div>
 </section>
