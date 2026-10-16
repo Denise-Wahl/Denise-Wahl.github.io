@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Denise Wahl//The NETWORK Code Webinar//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20261027T170000Z
+DTEND:20261027T182500Z
+SUMMARY:The NETWORK Code – kostenloses Live-Webinar mit Denise Wahl
+DESCRIPTION:Du hast dir deinen Platz gesichert! Das kostenlose Live-Webinar The NETWORK Code mit Denise Wahl startet um 18:00 Uhr.\n\nDen Zugangslink bekommst du rechtzeitig per E-Mail.
+URL:https://denise-wahl.github.io/webinar-anmeldung.html
+ORGANIZER;CN=Denise Wahl:mailto:denise.nowotnick1986@gmail.com
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+DESCRIPTION:Das Webinar The NETWORK Code startet in 1 Stunde!
+END:VALARM
+END:VEVENT
+END:VCALENDAR
