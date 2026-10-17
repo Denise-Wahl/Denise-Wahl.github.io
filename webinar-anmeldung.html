@@ -90,6 +90,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </form>
 <p style="font-size:.78rem;color:#53596e;text-align:center;margin-top:14px;">100 % kostenlos · kein Spam</p></div></div></section>
 <footer><div class="container"><span>© 2026 Denise Wahl · The NETWORK Code</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div></footer>
+
+<!-- Sticky CTA Bar -->
+<div id="sticky-bar" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);border-top:2px solid #f5d97a;padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;z-index:999;transform:translateY(100%);transition:transform .35s ease;box-shadow:0 -4px 20px rgba(14,22,69,.4)">
+  <span style="color:white;font-size:.88rem;font-weight:600;white-space:nowrap;display:none" class="sticky-label">27. Okt. · 18 Uhr · kostenlos</span>
+  <a href="#anmelden" style="display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(110deg,#f5d97a,#d5a848);color:#201a11;min-height:46px;padding:11px 26px;border-radius:40px;font-weight:700;font-size:.9rem;text-decoration:none;box-shadow:0 6px 18px rgba(183,139,43,.3);white-space:nowrap" onclick="document.getElementById('sticky-bar').style.display='none'">Jetzt kostenlos anmelden →</a>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('sticky-bar');
+  var label=bar.querySelector('.sticky-label');
+  var shown=false;
+  function checkShow(){
+    var hero=document.querySelector('.hero');
+    if(!hero)return;
+    var rect=hero.getBoundingClientRect();
+    if(rect.bottom<0&&!shown){
+      shown=true;
+      bar.style.transform='translateY(0)';
+      if(window.innerWidth>500)label.style.display='block';
+    }else if(rect.bottom>=0&&shown){
+      shown=false;
+      bar.style.transform='translateY(100%)';
+    }
+  }
+  window.addEventListener('scroll',checkShow,{passive:true});
+  window.addEventListener('resize',function(){
+    if(shown)label.style.display=window.innerWidth>500?'block':'none';
+  });
+  // Hide bar when registration section is visible
+  var anmelden=document.getElementById('anmelden');
+  if(anmelden&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){bar.style.transform='translateY(100)';shown=false;}
+    },{threshold:.2}).observe(anmelden);
+  }
+})();
+</script>
 <script>
 (function() {
   var params = new URLSearchParams(window.location.search);
