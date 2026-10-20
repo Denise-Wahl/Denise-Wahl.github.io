@@ -660,6 +660,57 @@ window._load_script = function(url, callback, isSubmit) {
 <section class="section soft" aria-labelledby="faq-title"><div class="wrap faq"><p class="eyebrow">Noch eine Frage?</p><h2 id="faq-title">Bevor du loslegst …</h2><details><summary>Ist der Test wirklich kostenlos?</summary><p>Ja, The Core Conflict ist als kostenloses Freebie gedacht. Für die Anmeldung werden die Angaben benötigt, die dein bestehendes Formular abfragt.</p></details><details><summary>Ich bin noch ziemlich am Anfang im Network Marketing. Passt das trotzdem?</summary><p>Ja, wenn du dein Business aufbauen möchtest und merkst, dass dich Zweifel, Bewertung oder die Angst vor Ablehnung manchmal zurückhalten, können die Reflexionsfragen auch für dich hilfreich sein.</p></details><details><summary>Ich weiß doch eigentlich, was ich tun müsste. Bringt mir der Test etwas?</summary><p>Gerade dann kann es hilfreich sein, nicht noch mehr Tipps zu sammeln, sondern deine typischen inneren Bremsen einmal bewusst anzuschauen. Der Test verspricht keine schnelle Lösung, aber er kann dir einen hilfreichen ersten Blick darauf geben.</p></details><details><summary>Was passiert nach der Anmeldung?</summary><p>Du bekommst zunächst eine Bestätigungs-E-Mail. Danach schicke ich dir die Analyse direkt in dein Postfach. Kein Spam, kein Abo, das du nicht wolltest.</p></details></div></section>
 <section class="section end" aria-labelledby="end-title"><div class="wrap"><p class="eyebrow">Dein nächster Schritt</p><h2 id="end-title">Du musst nicht warten, bis du dich irgendwann bereit fühlst.</h2><p>Wenn du dir schon so lange wünschst, dich mit deinem Business wirklich zu zeigen, brauchst du heute vielleicht gar nicht die nächste perfekte Strategie, sondern erst einmal zehn ehrliche Fragen an dich selbst.</p><p><a class="button" href="#formular">The Core Conflict kostenlos anfordern</a></p><p class="subnote">Für mehr Klarheit darüber, was dich innerlich noch zurückhält.</p></div></section>
 </main>
+
+<!-- Exit-Intent Popup -->
+<div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(7,13,43,.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px">
+  <div style="background:var(--navy);color:white;border-radius:16px;padding:clamp(28px,5vw,48px);max-width:480px;width:100%;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.5);border:1px solid rgba(245,217,122,.2)">
+    <button onclick="closePopup()" aria-label="Schließen" style="position:absolute;top:14px;right:16px;background:none;border:none;color:#ffffff88;font-size:1.5rem;cursor:pointer;line-height:1">×</button>
+    <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 10px">Warte kurz –</p>
+    <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.25;margin:0 0 12px;color:white">Dein kostenloser Selbsttest wartet noch auf dich.</h2>
+    <p style="color:#d4d9ee;font-size:.92rem;margin:0 0 22px">10 Fragen, die dir zeigen, welcher innere Konflikt dich im Network Marketing bremst. Kostenlos, direkt in dein Postfach.</p>
+    <form method="POST" action="https://denise-wahl.activehosted.com/proc.php" novalidate>
+      <input type="hidden" name="u" value="1">
+      <input type="hidden" name="f" value="1">
+      <input type="hidden" name="s">
+      <input type="hidden" name="c" value="0">
+      <input type="hidden" name="m" value="0">
+      <input type="hidden" name="act" value="sub">
+      <input type="hidden" name="v" value="2">
+      <input type="hidden" name="or" value="415f96e8-adc8-4f54-a353-0041bd308c47">
+      <div style="margin-bottom:12px">
+        <input type="text" name="firstname" placeholder="Dein Vorname" required style="display:block;width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(255,255,255,.08);color:white;font:inherit;font-size:.95rem;outline:none">
+      </div>
+      <div style="margin-bottom:16px">
+        <input type="text" name="email" placeholder="Deine E-Mail-Adresse" required style="display:block;width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(255,255,255,.08);color:white;font:inherit;font-size:.95rem;outline:none">
+      </div>
+      <button type="submit" style="display:block;width:100%;padding:15px 24px;background:linear-gradient(110deg,#f5d97a,#d5a848);color:#201a11;border:none;border-radius:40px;font:700 .95rem/1.4 'Poppins',sans-serif;cursor:pointer;box-shadow:0 9px 24px rgba(183,139,43,.3)">Ja, ich möchte den Test kostenlos →</button>
+    </form>
+    <p style="text-align:center;margin-top:12px"><button onclick="closePopup()" style="background:none;border:none;color:#ffffff55;font-size:.78rem;cursor:pointer;font-family:inherit">Nein danke, ich gehe ohne den Test.</button></p>
+  </div>
+</div>
+<script>
+(function(){
+  if(sessionStorage.getItem('exit-shown'))return;
+  var shown=false;
+  function show(){
+    if(shown)return;
+    shown=true;
+    sessionStorage.setItem('exit-shown','1');
+    var p=document.getElementById('exit-popup');
+    p.style.display='flex';
+  }
+  // Desktop: mouse leaves toward top
+  document.addEventListener('mouseleave',function(e){
+    if(e.clientY<10)show();
+  });
+  // Mobile fallback: 40s on page
+  setTimeout(show,40000);
+})();
+window.closePopup=function(){
+  document.getElementById('exit-popup').style.display='none';
+};
+</script>
+
 <footer class="footer"><div class="wrap"><span>© Denise Wahl</span><span><!-- Exakte funktionierende Links aus Bestandsseite übernehmen --> <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.instagram.com/denise_inspires/" rel="noopener noreferrer" target="_blank">Instagram</a></span></div></footer>
 </body>
 </html>
