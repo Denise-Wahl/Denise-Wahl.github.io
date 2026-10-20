@@ -666,7 +666,7 @@ window._load_script = function(url, callback, isSubmit) {
 <!-- Exit-Intent Popup -->
 <div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(7,13,43,.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px">
   <div style="background:var(--navy);color:white;border-radius:16px;padding:clamp(28px,5vw,48px);max-width:480px;width:100%;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.5);border:1px solid rgba(245,217,122,.2)">
-    <button onclick="closePopup()" aria-label="Schließen" style="position:absolute;top:14px;right:16px;background:none;border:none;color:#ffffff88;font-size:1.5rem;cursor:pointer;line-height:1">×</button>
+    <button onclick="closePopup()" aria-label="Schließen" style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#ffffffcc;font-size:1.1rem;cursor:pointer;line-height:1;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center">×</button>
     <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 10px">Warte kurz –</p>
     <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.25;margin:0 0 12px;color:white">Dein kostenloser Selbsttest wartet noch auf dich.</h2>
     <p style="color:#d4d9ee;font-size:.92rem;margin:0 0 22px">10 Fragen, die dir zeigen, welcher innere Konflikt dich im Network Marketing bremst. Kostenlos, direkt in dein Postfach.</p>
@@ -687,7 +687,6 @@ window._load_script = function(url, callback, isSubmit) {
       </div>
       <button type="submit" style="display:block;width:100%;padding:15px 24px;background:linear-gradient(110deg,#f5d97a,#d5a848);color:#201a11;border:none;border-radius:40px;font:700 .95rem/1.4 'Poppins',sans-serif;cursor:pointer;box-shadow:0 9px 24px rgba(183,139,43,.3)">Ja, ich möchte den Test kostenlos →</button>
     </form>
-    <p style="text-align:center;margin-top:12px"><button onclick="closePopup()" style="background:none;border:none;color:#ffffff55;font-size:.78rem;cursor:pointer;font-family:inherit">Nein danke, ich gehe ohne den Test.</button></p>
   </div>
 </div>
 <script>
