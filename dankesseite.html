@@ -96,10 +96,10 @@
       <p class="eyebrow">Und hier kommt meine persönliche Einladung für dich</p>
       <h1 id="webinar-title">The <span class="gold-text">NETWORK</span> Code</h1>
       <p class="hero-promise">Stell dir vor, du erzählst voller Begeisterung von deinem Business und musst dich danach nicht mehr fragen, ob du jemanden genervt hast.</p>
-      <a class="btn" href="webinar-anmeldung.html" style="margin:18px 0 24px;display:inline-flex">Ja, ich möchte beim Webinar dabei sein!</a>
+      <a class="btn" href="#" onclick="event.preventDefault();openWebinarPopup()" style="margin:18px 0 24px;display:inline-flex">Ja, ich möchte beim Webinar dabei sein!</a>
       <p>Du weißt, was dir dein Network-Business bedeutet, und du hast längst eine Vorstellung davon, was du dir damit aufbauen möchtest. Im kostenlosen Live-Webinar schauen wir gemeinsam darauf, weshalb du dich in manchen Momenten noch zurückhältst und wie du anfangen kannst, mit mehr Sicherheit und auf deine eigene Art über dein Business zu sprechen.</p>
       <p class="meta"><strong>Dienstag, 27. Oktober 2026 · 18:00 Uhr</strong><span> · 75 Minuten · kostenlos</span></p>
-      <a class="btn" href="webinar-anmeldung.html">Ja, ich möchte beim Webinar dabei sein!</a>
+      <a class="btn" href="#" onclick="event.preventDefault();openWebinarPopup()">Ja, ich möchte beim Webinar dabei sein!</a>
       <p class="cta-caption">Die Teilnahme ist kostenlos. Du meldest dich auf der nächsten Seite an.</p>
     </div>
     <figure><img alt="Denise Wahl" fetchpriority="high" src="denise-kleid.jpg"/></figure>
@@ -119,7 +119,7 @@
       <div class="benefit-card"><span>02</span><h3>Finde deine eigene Art zu sprechen</h3><p>Du brauchst keine Rolle zu spielen oder dein ganzes Privatleben zu teilen, um offen und glaubwürdig über deine Produkte und Möglichkeiten zu sprechen.</p></div>
       <div class="benefit-card"><span>03</span><h3>Nimm einen nächsten Schritt mit</h3><p>Du bekommst Impulse, wie du das Gelernte in echte Gespräche und in deinen Alltag zwischen Familie, Job und Business mitnehmen kannst.</p></div>
     </div>
-    <div class="center benefit-cta"><a class="btn" href="webinar-anmeldung.html">Ja, ich möchte beim Webinar dabei sein!</a></div>
+    <div class="center benefit-cta"><a class="btn" href="#" onclick="event.preventDefault();openWebinarPopup()">Ja, ich möchte beim Webinar dabei sein!</a></div>
   </div>
 </section>
 
@@ -146,7 +146,7 @@
       <p>Ich begleite Frauen im Network Marketing, die viel vorhaben und gleichzeitig merken, dass ihnen bei Sichtbarkeit und Gesprächen manchmal der eigene Mut im Weg steht.</p>
       <p>Vielleicht kennst du das auch: Du glaubst an deine Produkte, hast Bilder von deiner Zukunft im Kopf und weißt, warum du angefangen hast, aber sobald du dich zeigen oder jemanden ansprechen möchtest, wird aus der Begeisterung plötzlich Unsicherheit.</p>
       <p>Genau diese Momente interessieren mich, denn ich möchte, dass du lernst, deinem eigenen Weg mehr zu vertrauen und dein Business so zu gestalten, dass es zu dir und deinem Leben passt.</p>
-      <a class="btn" href="webinar-anmeldung.html">Ja, ich möchte beim Webinar dabei sein!</a>
+      <a class="btn" href="#" onclick="event.preventDefault();openWebinarPopup()">Ja, ich möchte beim Webinar dabei sein!</a>
     </div>
   </div>
 </section>
@@ -168,12 +168,12 @@
   <h2>Vielleicht ist das genau der Abend, an dem du merkst, dass du dich nicht länger kleinhalten möchtest.</h2>
   <p>Du musst noch nicht wissen, wie dein ganzes Business in einem Jahr aussieht, aber du darfst heute anfangen, mit mehr Vertrauen über das zu sprechen, was dir wichtig ist.</p>
   <p class="meta">Dienstag, 27. Oktober 2026 · 18:00 Uhr · kostenlos</p>
-  <a class="btn" href="webinar-anmeldung.html">Ja, ich möchte beim Webinar dabei sein!</a>
+  <a class="btn" href="#" onclick="event.preventDefault();openWebinarPopup()">Ja, ich möchte beim Webinar dabei sein!</a>
 </div></section>
 
 </main>
 <footer id="siteFooter"><div class="container"><span>© 2026 Denise Wahl</span><div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></footer>
-<div class="sticky hidden" id="sticky"><a class="btn" href="webinar-anmeldung.html">Kostenlos zum Webinar anmelden</a></div>
+<div class="sticky hidden" id="sticky"><a class="btn" href="#" onclick="event.preventDefault();openWebinarPopup()">Kostenlos zum Webinar anmelden</a></div>
 <script>(function(){
   const sticky=document.getElementById('sticky');
   const footer=document.getElementById('siteFooter');
@@ -186,5 +186,43 @@
     toggle();
   }
 })();</script>
+
+<!-- Webinar-Anmelde-Popup -->
+<div id="webinar-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(7,13,43,.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px">
+  <div style="background:white;color:var(--navy);border-radius:16px;padding:clamp(28px,5vw,44px);max-width:460px;width:100%;position:relative;box-shadow:0 24px 80px rgba(7,13,43,.35)">
+    <button onclick="closeWebinarPopup()" aria-label="Schließen" style="position:absolute;top:14px;right:16px;background:rgba(14,22,69,.08);border:1px solid rgba(14,22,69,.12);color:#0E1645;font-size:1.1rem;cursor:pointer;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center">×</button>
+    <p style="margin:0 0 4px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold-rich)">Kostenlos & live</p>
+    <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;margin:0 0 6px;color:var(--navy)">The NETWORK Code</h3>
+    <p style="font-size:.88rem;color:#566080;margin:0 0 20px">Dienstag, 27. Oktober 2026 · 18:00 Uhr · 75 Minuten</p>
+    <form method="POST" action="https://denise-wahl.activehosted.com/proc.php" novalidate>
+      <input type="hidden" name="u" value="3">
+      <input type="hidden" name="f" value="3">
+      <input type="hidden" name="s" value="">
+      <input type="hidden" name="c" value="0">
+      <input type="hidden" name="m" value="0">
+      <input type="hidden" name="act" value="sub">
+      <input type="hidden" name="v" value="2">
+      <input type="hidden" name="or" value="8e941e48-a415-435f-8a33-69485b3a6bd6">
+      <div style="margin-bottom:12px">
+        <label style="display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#566080;margin-bottom:5px">Vorname *</label>
+        <input type="text" name="firstname" placeholder="Dein Vorname" required style="display:block;width:100%;padding:13px 16px;border:1.5px solid #d8dce8;border-radius:10px;font:inherit;font-size:.95rem;color:#0E1645;background:#fff;outline:none;box-sizing:border-box">
+      </div>
+      <div style="margin-bottom:12px">
+        <label style="display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#566080;margin-bottom:5px">E-Mail-Adresse *</label>
+        <input type="text" name="email" placeholder="deine@email.de" required style="display:block;width:100%;padding:13px 16px;border:1.5px solid #d8dce8;border-radius:10px;font:inherit;font-size:.95rem;color:#0E1645;background:#fff;outline:none;box-sizing:border-box">
+      </div>
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#566080;margin-bottom:5px">Telefon *</label>
+        <input type="text" name="phone" placeholder="+49 …" required style="display:block;width:100%;padding:13px 16px;border:1.5px solid #d8dce8;border-radius:10px;font:inherit;font-size:.95rem;color:#0E1645;background:#fff;outline:none;box-sizing:border-box">
+      </div>
+      <button type="submit" style="display:block;width:100%;padding:15px 24px;background:linear-gradient(110deg,#f5d97a,#d5a848);color:#201a11;border:none;border-radius:40px;font:700 .95rem/1.4 'Poppins',sans-serif;cursor:pointer;box-shadow:0 9px 24px rgba(183,139,43,.3)">Ja, ich möchte beim Webinar dabei sein! →</button>
+      <p style="font-size:.75rem;color:#566080;text-align:center;margin:12px 0 0">100 % kostenlos · kein Spam · jederzeit abmeldbar</p>
+    </form>
+  </div>
+</div>
+<script>
+function openWebinarPopup(){document.getElementById('webinar-popup').style.display='flex';}
+function closeWebinarPopup(){document.getElementById('webinar-popup').style.display='none';}
+</script>
 </body>
 </html>
