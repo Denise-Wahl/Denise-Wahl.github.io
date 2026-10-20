@@ -132,6 +132,10 @@ function closeWebinarPopup(){document.getElementById('webinar-popup').style.disp
 </div>
 <script>
 (function(){
+  if('scrollRestoration' in history){history.scrollRestoration='manual';}
+  window.scrollTo(0,0);
+})();
+(function(){
   var bar=document.getElementById('sticky-bar');
   var label=bar.querySelector('.sticky-label');
   var shown=false;
