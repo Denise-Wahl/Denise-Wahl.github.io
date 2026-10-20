@@ -55,7 +55,37 @@
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DNRN87R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
-<header class="top"><strong>Denise Wahl</strong><small>Dein Network. Auf deine Art.</small></header>
+<header style="background:var(--navy);color:white;text-align:center;padding:12px 24px;border-bottom:1px solid rgba(245,217,122,.2)">
+  <p style="margin:0 0 6px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700">Das kostenlose Webinar startet in</p>
+  <div id="countdown-bar" style="display:flex;justify-content:center;gap:10px">
+    <span class="cbox"><span id="cb-days">–</span><small>Tage</small></span>
+    <span class="csep">:</span>
+    <span class="cbox"><span id="cb-hours">–</span><small>Std.</small></span>
+    <span class="csep">:</span>
+    <span class="cbox"><span id="cb-min">–</span><small>Min.</small></span>
+    <span class="csep">:</span>
+    <span class="cbox"><span id="cb-sec">–</span><small>Sek.</small></span>
+  </div>
+  <style>
+    .cbox{display:inline-flex;flex-direction:column;align-items:center;min-width:44px}
+    .cbox span{font:700 1.5rem/1.2 'Playfair Display',Georgia,serif;color:var(--gold)}
+    .cbox small{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#b0b8d4;margin-top:1px}
+    .csep{font:700 1.4rem/1.8 'Playfair Display',serif;color:var(--gold);opacity:.5}
+  </style>
+</header>
+<script>
+(function(){
+  var target=new Date('2026-10-27T18:00:00+01:00');
+  function tick(){
+    var d=Math.max(0,target-Date.now());
+    document.getElementById('cb-days').textContent=String(Math.floor(d/86400000)).padStart(2,'0');
+    document.getElementById('cb-hours').textContent=String(Math.floor(d/3600000)%24).padStart(2,'0');
+    document.getElementById('cb-min').textContent=String(Math.floor(d/60000)%60).padStart(2,'0');
+    document.getElementById('cb-sec').textContent=String(Math.floor(d/1000)%60).padStart(2,'0');
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>
 <main>
 
 <!-- Webinar-Hero -->
